@@ -1,0 +1,35 @@
+.form {
+  margin-bottom: 20px;
+}
+
+.form input {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+.form button {
+  padding: 8px 15px;
+  background: #ff9900;
+  border: none;
+  cursor: pointer;
+}
+
+.delivered {
+  color: green;
+  font-weight: bold;
+}
+
+.pending {
+  color: orange;
+  font-weight: bold;
+}
+
+.cancelled {
+  color: red;
+  font-weight: bold;
+}
+
+button {
+  padding: 5px 10px;
+  cursor: pointer;
+}

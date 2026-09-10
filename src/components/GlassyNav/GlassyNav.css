@@ -1,0 +1,37 @@
+.category-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.category-navbar {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  padding: 10px 30px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  overflow-x: auto;
+  margin-top: 25px;
+}
+
+.category-item {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.category-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
