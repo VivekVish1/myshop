@@ -72,7 +72,6 @@ function FetchProduct() {
 
           <CatNav />
 
-
           <div className="hero-content">
             <span className="tag">New Collection 2026</span>
 
