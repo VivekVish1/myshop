@@ -651,9 +651,9 @@ p {
   border-radius: 10px;
 }
 
-::-webkit-scrollbar-thumb::before {
+/* ::-webkit-scrollbar-thumb::before {
   content: "◆";
-}
+} */
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #3d3d3d 0%, #5a5a5a 100%);
@@ -664,6 +664,6 @@ p {
   color: white;
 }
 
-::selection::before {
+/* ::selection::before {
   content: "✦";
-}
+} */

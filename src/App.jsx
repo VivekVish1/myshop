@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename="/myshop">
         <Navbar />
         <Routes>
           <Route path="*" element={<Main />} />
