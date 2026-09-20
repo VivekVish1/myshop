@@ -1,0 +1,130 @@
+.manage-order-faq {
+  width: 100%;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.manage-order-faq__breadcrumb {
+  font-size: 14px;
+  color: hsl(175, 77%, 26%);
+  cursor: pointer;
+  margin-bottom: 25px;
+  font-weight: 500;
+  transition: 0.3s ease;
+  display: inline-block;
+}
+
+.manage-order-faq__breadcrumb:hover {
+  color: #14b8a6;
+  transform: translateX(-4px);
+}
+
+.manage-order-faq__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 30px;
+}
+
+.manage-order-faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.manage-order-faq__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 22px;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid #e6f4f3;
+  cursor: pointer;
+  transition: 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.manage-order-faq__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #0f766e, #14b8a6);
+  opacity: 0.07;
+  transition: 0.4s ease;
+}
+
+.manage-order-faq__item:hover::before {
+  width: 100%;
+}
+
+.manage-order-faq__item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(15, 118, 110, 0.12);
+}
+
+.manage-order-faq__question {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.manage-order-faq__icon {
+  font-size: 16px;
+  color: #0f766e;
+  transition: 0.3s ease;
+}
+
+.manage-order-faq__item:hover .manage-order-faq__icon {
+  transform: rotate(180deg);
+  color: #14b8a6;
+}
+
+
+.manage-order-faq__footer {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.manage-order-faq__footer a {
+  color: #0f766e;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.manage-order-faq__footer a:hover {
+  color: #14b8a6;
+  text-decoration: underline;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .manage-order-faq__title {
+    font-size: 20px;
+  }
+
+  .manage-order-faq__item {
+    padding: 18px;
+  }
+
+  .manage-order-faq__question {
+    font-size: 14px;
+  }
+}
