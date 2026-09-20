@@ -20,11 +20,13 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Footer from "./components/Footer/Footer";
 import GlassyNav from "./components/GlassyNav/GlassyNav";
 
+const basename = import.meta.env.BASE_URL.replace(/\/$/, "") || "/";
+
 function App() {
 
   return (
     <div className="App">
-      <BrowserRouter basename="/myshop">
+      <BrowserRouter basename={basename}>
         <Navbar />
         <Routes>
           <Route path="*" element={<Main />} />
