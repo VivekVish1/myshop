@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Main from "./components/main/Main";
@@ -23,9 +24,32 @@ import GlassyNav from "./components/GlassyNav/GlassyNav";
 const basename = import.meta.env.BASE_URL.replace(/\/$/, "") || "/";
 
 function App() {
+  const [addedProduct, setAddedProduct] = useState(null);
+
+  useEffect(() => {
+    const handleProductAdded = (event) => {
+      setAddedProduct(event.detail?.title || "Product");
+    };
+
+    window.addEventListener("productAdded", handleProductAdded);
+    return () => window.removeEventListener("productAdded", handleProductAdded);
+  }, []);
+
+  useEffect(() => {
+    if (!addedProduct) return undefined;
+
+    const timeoutId = window.setTimeout(() => setAddedProduct(null), 3000);
+    return () => window.clearTimeout(timeoutId);
+  }, [addedProduct]);
 
   return (
     <div className="App">
+      {addedProduct && (
+        <div className="cart-success-toast" role="status">
+          <span className="cart-success-icon" aria-hidden="true">✓</span>
+          <span>{addedProduct} added to cart successfully</span>
+        </div>
+      )}
       <BrowserRouter basename={basename}>
         <Navbar />
         <Routes>

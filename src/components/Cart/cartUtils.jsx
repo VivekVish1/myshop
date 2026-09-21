@@ -15,4 +15,9 @@ export const addToCart = (product) => {
 
   localStorage.setItem("cart", JSON.stringify(cart));
   window.dispatchEvent(new Event("cartUpdated"));
+  window.dispatchEvent(
+    new CustomEvent("productAdded", {
+      detail: { title: product.title },
+    })
+  );
 };

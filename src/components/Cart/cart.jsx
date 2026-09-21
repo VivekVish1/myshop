@@ -81,7 +81,7 @@ function Cart() {
         <h2>Your cart is empty!</h2>
         <p>Looks like you haven't added anything yet.</p>
         <Link to="/" className="shop-now-btn">
-          Shop Now
+          Explore Now
         </Link>
       </div>
     );

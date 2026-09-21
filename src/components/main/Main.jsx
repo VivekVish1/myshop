@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import ImageSlider from "../Slider/ImageSlider"
 import ProductSlider from "../Product Slider/ProductSlider"
+import { addToCart } from "../Cart/cartUtils";
 // import CatNav from "../GlassyNav/GlassyNav";
 
 function FetchProduct() {
@@ -43,25 +44,6 @@ function FetchProduct() {
       setSeeMore((prev) => prev + 4);
       setIsLoadingMore(false);
     }, 500);
-  };
-
-  const addToCart = (product) => {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    const existing = cart.find((item) => item.id === product.id);
-
-    if (existing) {
-      cart = cart.map((item) =>
-        item.id === product.id
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      );
-    } else {
-      cart.push({ ...product, quantity: 1 });
-    }
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-    window.dispatchEvent(new Event("cartUpdated"));
   };
 
   return (
