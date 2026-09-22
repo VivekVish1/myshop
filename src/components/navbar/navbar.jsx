@@ -40,7 +40,7 @@ function Navbar() {
     return (
         <header>
             <div className="navbar-container">
-                <Link to="/" className="logo">Shipzy</Link>
+                <Link to="/" className="logo">MyShop</Link>
 
                 <div
                     className={`hamburger ${menuOpen ? "active" : ""}`}

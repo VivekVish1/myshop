@@ -9,7 +9,7 @@ function Footer() {
 
       <div className="elite-footer__content">
         <div className="elite-footer__brand">
-          <h2 style={{color:"#fff"}}>Shipzy</h2>
+          <h2 style={{color:"#fff"}}>MyShop</h2>
           <p>
             India’s most trusted online shopping platform delivering
             seamless, secure and reliable experiences to millions of users.
@@ -35,7 +35,7 @@ function Footer() {
       <div className="elite-footer__divider" />
 
       <div className="elite-footer__bottom">
-        <span>© {year} Shipzy Pvt Ltd. All rights reserved.</span>
+        <span>© {year} MyShop Pvt Ltd. All rights reserved.</span>
         <span className="elite-footer__tagline">
           Engineered with precision • Built for scale
         </span>

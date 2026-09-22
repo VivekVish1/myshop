@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import ImageSlider from "../Slider/ImageSlider"
 import ProductSlider from "../Product Slider/ProductSlider"
@@ -43,7 +43,7 @@ function FetchProduct() {
     setTimeout(() => {
       setSeeMore((prev) => prev + 4);
       setIsLoadingMore(false);
-    }, 500);
+    }, 1000);
   };
 
   return (
@@ -73,7 +73,12 @@ function FetchProduct() {
         </section>
       )}
 
-      {loading && <p>Loading...</p>}
+      {loading && (
+        <div className="product-loading" role="status" aria-live="polite">
+          <span className="product-loader" aria-hidden="true"></span>
+          <span>Loading products...</span>
+        </div>
+      )}
       {error && <p>{error}</p>}
 
       <div className="product-container">
@@ -116,8 +121,18 @@ function FetchProduct() {
       </div>
 
       <div className="View_more">
-        <button onClick={handleSeeMore} className="View_more_btn">
-          View More
+        <button
+          onClick={handleSeeMore}
+          disabled={isLoadingMore}
+          className="View_more_btn">
+          {isLoadingMore ? (
+            <>
+              <span className="product-loader" aria-hidden="true"></span>
+              Loading
+            </>
+          ) : (
+            "See More"
+          )}
         </button>
       </div>
 

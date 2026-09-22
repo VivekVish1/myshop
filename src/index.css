@@ -285,10 +285,9 @@ p {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  flex: 1; /* pushes footer down */
+  flex: 1;
 }
 
-/* Title */
 .product-title {
   font-size: 1rem;
   font-weight: 700;
@@ -317,7 +316,7 @@ p {
 /* ═══════════════════ FOOTER (ALWAYS BOTTOM) ═══════════════════ */
 
 .product-footer {
-  margin-top: auto; /* pushes footer to bottom */
+  margin-top: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -326,7 +325,6 @@ p {
   border-top: 1px solid #eee;
 }
 
-/* Price */
 .product-price {
   font-size: 1.2rem;
   font-weight: 800;
@@ -334,19 +332,6 @@ p {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-/* Buy Button */
-/* .buy-button {
-  padding: 8px 16px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  background: linear-gradient(135deg, #5a5a5a, #3d3d3d);
-  color: #ffffff;
-  transition: all 0.3s ease;
-} */
 
 .buy-button:hover {
   /* transform: translateY(-2px); */
@@ -359,126 +344,54 @@ p {
 
 .View_more {
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 60px 40px;
-  gap: 20px;
-}
-
-.View_more::before {
-  content: "▼";
-  position: absolute;
-  font-size: 1.5rem;
-  color: #d0d0d0;
-  animation: float 3s ease-in-out infinite;
+  gap: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 .View_more_btn {
-  padding: 16px 48px;
-  background: linear-gradient(135deg, #5a5a5a 0%, #3d3d3d 100%);
-  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  font-size: 16px;
   border: none;
-  border-radius: 50px;
-  font-size: 1.1rem;
-  font-weight: 600;
+  border-radius: 6px;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  position: relative;
-  overflow: hidden;
 }
 
-.View_more_btn::before {
-  content: "◆";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.15),
-    transparent
-  );
-  transition: left 0.5s;
-}
-
-.View_more_btn:hover::before {
-  left: 100%;
-}
-
-.View_more_btn:hover:not(.loading_more) {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.16);
-}
-
-.View_more_btn.loading_more {
-  opacity: 0.7;
+.View_more_btn:disabled {
   cursor: not-allowed;
-  background: linear-gradient(135deg, #8a8a8a 0%, #6a6a6a 100%);
+  opacity: 0.7;
 }
 
-.loading_more {
-  animation: pulse 1.5s ease-in-out infinite;
+.product-loading {
+  display: flex;
+  min-height: 180px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #4a4a4a;
+  font-weight: 600;
 }
 
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 1;
-    content: "⊙";
-  }
-  50% {
-    opacity: 0.6;
-    content: "◯";
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.product-loader {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 3px solid #ddd;
+  border-top: 3px solid #333;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
 }
 
 @keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
   to {
     transform: rotate(360deg);
   }

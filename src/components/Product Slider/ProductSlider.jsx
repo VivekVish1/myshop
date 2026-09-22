@@ -3,6 +3,13 @@ import "./ProductSlider.css";
 import { Link } from "react-router-dom";
 import { addToCart } from "../Cart/cartUtils";
 
+const formatPrice = (price) =>
+    new Intl.NumberFormat("en-IN", {
+        style: "currency",
+        currency: "INR",
+        maximumFractionDigits: 0,
+    }).format(price * 80);
+
 function ProductSlider() {
     const [products, setProducts] = useState([]);
 
@@ -26,33 +33,35 @@ function ProductSlider() {
         <div className="product_slider_container">
             <h2 className="slider_title">Popular Products</h2>
 
-            <button onClick={scrollLeft} className="btn_left">
-                <i className="fa-solid fa-angle-left"></i>
-            </button>
+            <div className="product_slider_child">
+                <button onClick={scrollLeft} className="btn_left">
+                    <i className="fa-solid fa-angle-left"></i>
+                </button>
 
-            <button onClick={scrollRight} className="btn_right">
-                <i className="fa-solid fa-angle-right"></i>
-            </button>
+                <button onClick={scrollRight} className="btn_right">
+                    <i className="fa-solid fa-angle-right"></i>
+                </button>
 
-            <div className="slider_wrapper" id="slider">
-                {products.map((item) => (
-                    <Link
-                        to={`/product-details/${item.id}`}
-                        key={item.id}
-                        className="product_slider"
-                    >
-                        <div className="product_Slider_card">
-                            <img
-                                className="product_slider_img"
-                                src={item.thumbnail}
-                                alt={item.title}
-                            />
-                            <h4 className="product-title">{item.title}</h4>
-                            <p className="product-price">₹ {item.price * 80}</p>
-                            <button>View</button>
-                        </div>
-                    </Link>
-                ))}
+                <div className="slider_wrapper" id="slider">
+                    {products.map((item) => (
+                        <Link
+                            to={`/product-details/${item.id}`}
+                            key={item.id}
+                            className="product_slider"
+                        >
+                            <div className="product_Slider_card">
+                                <img
+                                    className="product_slider_img"
+                                    src={item.thumbnail}
+                                    alt={item.title}
+                                />
+                                <p className="slider-product-title">{item.title}</p>
+                                <p className="product-price">{formatPrice(item.price)}</p>
+                                <button>View</button>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
             </div>
         </div>
     );

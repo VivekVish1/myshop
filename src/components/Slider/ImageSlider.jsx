@@ -1,12 +1,16 @@
 import React from 'react'
 import './ImageSlider.css'
 import { useState, useEffect } from 'react'
+import image1 from '../../Images/Image1.jpg'
+import image2 from '../../Images/Image2.jpg'
+import image3 from '../../Images/Image3.jpg'
+import image4 from '../../Images/Image4.jpg'
 
 const images = [
-  "/src/Images/Image1.jpg",
-  "/src/Images/Image2.jpg",
-  "/src/Images/Image3.jpg",
-  "/src/Images/Image4.jpg",
+  image1,
+  image2,
+  image3,
+  image4,
 ]
 function ImageSlider() {
 
@@ -28,8 +32,9 @@ function ImageSlider() {
 
   return (
     <div className='imageSlider_container'>
+
       <div className="slider">
-        
+
         <button onClick={prevSlide} className='slider_btn_left'><i className="fa-solid fa-angle-left"></i></button>
 
         <img key={currentImage} src={images[currentImage]} alt="slide" className='imageSlider' />

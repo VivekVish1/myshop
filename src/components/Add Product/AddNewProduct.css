@@ -94,14 +94,6 @@
   justify-content: center;
 }
 
-.product-image {
-  width: 130px;
-  height: 130px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
-}
-
 .product-right {
   flex: 1;
   display: flex;
